@@ -9,8 +9,9 @@ const products = [
 ];
 
 const print = (tekst, output) => {
-    console.log("♡".repeat(70));
-    console.log(tekst + " " + output);
+    console.log("\n" + "♡".repeat(70));
+    console.log(tekst);
+    console.log(output);
 };
 
 const mindreEnn200 = products.filter((product) => product.price <= 200);
