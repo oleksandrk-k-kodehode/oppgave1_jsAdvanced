@@ -13,7 +13,7 @@ const products_copy = products.slice();
 
 // Hjelpefunksjon for å skrive ut resultatene på en ryddig måte
 const print = (tekst, output) => {
-    console.log("\n" + "♡".repeat(70)); // Skillelinje
+    console.log("\n" + "♡".repeat(80)); // Skillelinje
     console.log(tekst); // Beskrivelse av resultatet
     console.log(output); // Selve resultatet
 };
