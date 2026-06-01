@@ -8,27 +8,36 @@ const products = [
     { name: "Sneakers", price: 300, category: "clothing" },
 ];
 
+// Lager en kopi av products-arrayen slik at originalen ikke endres
+const products_copy = products.slice();
+
+// Hjelpefunksjon for å skrive ut resultatene på en ryddig måte
 const print = (tekst, output) => {
-    console.log("\n" + "♡".repeat(70));
-    console.log(tekst);
-    console.log(output);
+    console.log("\n" + "♡".repeat(70)); // Skillelinje
+    console.log(tekst); // Beskrivelse av resultatet
+    console.log(output); // Selve resultatet
 };
 
-const mindreEnn200 = products.filter((product) => product.price <= 200);
+// Filtrerer ut alle produkter som koster 200 eller mindre
+const mindreEnn200 = products_copy.filter((product) => product.price < 200);
 print("mindreEnn200:", mindreEnn200);
 
-const keys = products.map((obj) => obj.name);
+// Henter ut navnene på alle produktene og lagrer dem i en ny array
+const keys = products_copy.map((obj) => obj.name);
 print("keys:", keys);
 
-const electronicsCat = products.filter(
+// Filtrerer ut alle produkter i kategorien "electronics"
+const electronicsCat = products_copy.filter(
     (product) => product.category === "electronics",
 );
 print("electronicsCat:", electronicsCat);
 
-const checkPriceMt1000 = products.some((product) => product.price >= 1000);
+// Sjekker om minst ett produkt har en pris på 1000 eller mer
+const checkPriceMt1000 = products_copy.some((product) => product.price >= 1000);
 print("checkPriceMt1000:", checkPriceMt1000);
 
-const totalSum = products.reduce((acc, currVal) => acc + currVal.price, 0);
+// Summerer prisene på alle produktene
+const totalSum = products_copy.reduce((acc, currVal) => acc + currVal.price, 0);
 print("totalSum:", totalSum);
 
 console.log("♡".repeat(70));
